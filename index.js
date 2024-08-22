@@ -31,11 +31,11 @@ function savedAnim(ev, btn) {
         ev.style.setProperty('--l', '1')
         ev.style.setProperty('--wid', '0%')
         ev.style.setProperty('--r', 'unset')
-    }, 300);
+    }, 500);
     setTimeout(() => {
         ev.style.setProperty('--l', '0')
         ev.style.setProperty('--wid', '0%')
         ev.style.setProperty('--r', 'unset')
         btn.removeAttribute('disabled')
-    }, 600);
+    }, 1000);
 }
