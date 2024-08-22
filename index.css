@@ -2,6 +2,7 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    background-color: black;
 }
 
 @font-face {
@@ -55,13 +56,81 @@ body {
 /* Popup */
 
 /* Your code here */
-.center-abs {
+.center {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
 
-.uwu {
-    font-size: 2rem;
+.inpAnim {
+    position: relative;
+    outline: none;
+    background-color: #ffffff17;
+    border: none;
+    color: white;
+    padding: 6px 8px;
+}
+
+.inpAnim::placeholder {
+    color: rgba(255, 255, 255, 0.315);
+}
+
+.inpAnim::before {
+    content: "abc";
+    color: white;
+}
+
+.btnAnim {
+    position: relative;
+    color: #fff;
+    text-decoration: none;
+    background-color: #ffffff2c;
+    padding: 5px 10px;
+    margin: 2px 2px;
+    cursor: pointer;
+    border: none;
+    transition: 0.1s;
+}
+
+.btnAnim:active {
+    opacity: 0.5;
+}
+
+.btnAnim::before {
+    content: "";
+    background-color: #ffffff1f;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    height: 100%;
+    width: 0%;
+    transition: 300ms;
+}
+
+.btnAnim:hover::before {
+    width: 100%;
+    left: 0;
+    right: auto;
+}
+
+.btnAnim:disabled {
+    opacity: 0.5;
+}
+
+.input-div {
+    position: relative;
+    display: inline-block;
+}
+
+.input-div::after {
+    position: absolute;
+    top: var(--t, 0);
+    left: var(--l, 0);
+    right: var(--r, 0);
+    content: "";
+    background-color: white;
+    width: var(--wid, 0%);
+    height: 100%;
+    transition: 0.3s;
 }
