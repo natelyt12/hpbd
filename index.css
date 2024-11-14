@@ -2,7 +2,7 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-color: black;
+    background-color: white;
 }
 
 @font-face {
@@ -56,82 +56,60 @@ body {
 /* Popup */
 
 /* Your code here */
-.center {
+
+/* Font */
+.edu-au-vic-wa-nt-pre {
+    font-family: "Edu AU VIC WA NT Pre", cursive;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+    color: #657166;
+}
+
+.navbar {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fde8d3;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.logo {
+    font-size: 2em;
+    margin: 0;
+    text-align: center;
+}
+
+.load {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.loadcir {
+    height: 30px;
+    width: 30px;
+    border-radius: 100px;
+    background-image: conic-gradient(#fde8d3 90deg, #657166);
+    animation: spin 2s linear infinite;
+}
+
+.loadcir::before {
     position: absolute;
+    content: '';
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    border-radius: 100px;
+    background-color: #fde8d3;
+    width: 25px;
+    height: 25px;
 }
 
-.inpAnim {
-    position: relative;
-    outline: none;
-    background-color: #ffffff17;
-    border: none;
-    color: white;
-    padding: 6px 8px;
-}
-
-.inpAnim::placeholder {
-    color: rgba(255, 255, 255, 0.315);
-}
-
-.inpAnim::before {
-    content: "abc";
-    color: white;
-}
-
-.btnAnim {
-    position: relative;
-    color: #fff;
-    text-decoration: none;
-    background-color: #ffffff2c;
-    padding: 5px 10px;
-    margin: 2px 2px;
-    cursor: pointer;
-    border: none;
-    transition: 0.1s;
-}
-
-.btnAnim:active {
-    opacity: 0.5;
-}
-
-.btnAnim::before {
-    content: "";
-    background-color: #ffffff1f;
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    height: 100%;
-    width: 0%;
-    transition: 300ms;
-}
-
-.btnAnim:hover::before {
-    width: 100%;
-    left: 0;
-    right: auto;
-}
-
-.btnAnim:disabled {
-    opacity: 0.5;
-}
-
-.input-div {
-    position: relative;
-    display: inline-block;
-}
-
-.input-div::after {
-    position: absolute;
-    top: var(--t, 0);
-    left: var(--l, 0);
-    right: var(--r, 0);
-    content: "";
-    background-color: white;
-    width: var(--wid, 0%);
-    height: 100%;
-    transition: all 500ms cubic-bezier(0.230, 1.000, 0.320, 1.000);
-    /* easeOutQuint */
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
 }
