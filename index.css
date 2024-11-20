@@ -72,14 +72,15 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #fde8d3;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    background-color: white;
+    transition: 1s;
 }
 
 .logo {
     font-size: 2em;
-    margin: 0;
-    text-align: center;
+    margin: 0 0 20px 0;
+    user-select: none;
+    transition: 1s;
 }
 
 .load {
@@ -88,24 +89,29 @@ body {
     flex-direction: column;
 }
 
-.loadcir {
+#loadcir {
     height: 30px;
     width: 30px;
     border-radius: 100px;
     background-image: conic-gradient(#fde8d3 90deg, #657166);
     animation: spin 2s linear infinite;
+    transition: 0.5s;
 }
 
-.loadcir::before {
+#loadcir::before {
     position: absolute;
     content: '';
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     border-radius: 100px;
-    background-color: #fde8d3;
+    background-color: white;
     width: 25px;
     height: 25px;
+}
+
+.done {
+    height: 60px;
 }
 
 @keyframes spin {
