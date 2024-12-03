@@ -10,9 +10,12 @@
     /* easeInOutQuint */
 }
 
+
 body {
     user-select: none;
     overflow: hidden;
+    margin: 0;
+    padding: 0;
 }
 
 .age {
@@ -24,6 +27,8 @@ body {
     height: 250px;
     display: flex;
     overflow: hidden;
+    background-color: rgba(255, 255, 255, 0.411);
+    border-radius: 1000px;
     font-weight: 300;
     animation: zoom-out 1.5s 1s cubic-bezier(0.860, 0.000, 0.070, 1.000) forwards;
 }
@@ -69,16 +74,57 @@ body {
     animation: up 2s 2s forwards cubic-bezier(0.230, 1.000, 0.320, 1.000);
 }
 
-.hueanim {
+.nametext {
+    overflow: hidden;
+    position: absolute;
+    left: 50%;
+    top: -50%;
+    height: 30px;
+    font-size: 1.5em;
+    transform: translate(-50%);
+    text-align: center;
     color: red;
-    animation: hue 5s 1s linear infinite;
+    animation: downname 2s 2s forwards cubic-bezier(0.230, 1.000, 0.320, 1.000), hue 5s 1s linear infinite;
+}
+
+#changename {
+    margin: 0;
+    animation: changename 7s 5s infinite cubic-bezier(0.230, 1.000, 0.320, 1.000);
 }
 
 /* Keyframes */
 
+@keyframes changename {
+    0% {
+        transform: translateY(0px);
+    }
+
+    25% {
+        transform: translateY(-30px);
+    }
+
+    50% {
+        transform: translateY(-58px);
+    }
+
+    75% {
+        transform: translateY(-86px);
+    }
+
+    100% {
+        transform: translateY(-115px);
+    }
+}
+
 @keyframes down {
     to {
         top: 10%;
+    }
+}
+
+@keyframes downname {
+    to {
+        top: 19%;
     }
 }
 
