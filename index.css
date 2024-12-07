@@ -16,7 +16,10 @@ body {
     overflow: hidden;
     margin: 0;
     padding: 0;
+    width: 100%;
+    height: 100vh;
 }
+
 
 .age {
     position: absolute;
@@ -27,7 +30,6 @@ body {
     height: 250px;
     display: flex;
     overflow: hidden;
-    background-color: rgba(255, 255, 255, 0.411);
     border-radius: 1000px;
     font-weight: 300;
     animation: zoom-out 1.5s 1s cubic-bezier(0.860, 0.000, 0.070, 1.000) forwards;
@@ -83,13 +85,41 @@ body {
     font-size: 1.5em;
     transform: translate(-50%);
     text-align: center;
-    color: red;
+    color: transparent;
     animation: downname 2s 2s forwards cubic-bezier(0.230, 1.000, 0.320, 1.000), hue 5s 1s linear infinite;
 }
+
 
 #changename {
     margin: 0;
     animation: changename 7s 5s infinite cubic-bezier(0.230, 1.000, 0.320, 1.000);
+    background-image: linear-gradient(to left, #ff3b8d, #6643ff);
+    background-clip: text;
+    -webkit-background-clip: text;
+}
+
+#confetti-left {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+#confetti-right {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.test {
+    width: 50px;
+    height: 50px;
+    background-color: orange;
 }
 
 /* Keyframes */
@@ -143,13 +173,13 @@ body {
 @keyframes move_up {
     to {
         transform: translateY(-250px);
-        color: red;
+        color: #ff3b8d;
     }
 }
 
 @keyframes turn_color {
     to {
-        color: red;
+        color: #ff3b8d;
     }
 }
 

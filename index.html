@@ -16,7 +16,7 @@
     <p class="quint rubik-fonts hpbd">Happy birthday,
     <div class="nametext rubik-fonts quint">
         <p id="changename">Phúc Thanhh <br>Natelyt
-            <br>coder :sob: <br>Hướng nội <br> Phúc Thanhh
+            <br>coder :sob: <br>Còy=) <br> Phúc Thanhh
         </p>
     </div>
     </p>
@@ -26,9 +26,25 @@
         <p class="ageR">6<br>7</p>
     </div>
 
-    <canvas class="fireworks"></canvas>
+    <canvas id="confetti-left"></canvas>
+    <canvas id="confetti-right"></canvas>
+
+    <div class="test"></div>
 
     <script src="./index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+    <script src="./assets/anime-master/lib/anime.min.js"></script>
+
+    <!-- Anime (fvck i don't know how to import module with ES^ module) -->
+    <script>
+        anime({
+            targets: '.test',
+            translateX: 250,
+            rotate: '1turn',
+            backgroundColor: 'yellow',
+            duration: 3000,
+        });
+    </script>
 </body>
 
 </html>
