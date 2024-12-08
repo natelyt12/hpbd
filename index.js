@@ -37,24 +37,6 @@ setTimeout(() => {
         startVelocity: 45,
     });
 
-    var conLeft = document.getElementById('confetti-left');
-    var conRight = document.getElementById('confetti-right');
-
-    confess(conLeft, -0.3, 20)
-    confess(conRight, 1.3, 160)
-
-    function confess(name, dir, angle) {
-        name.confetti = name.confetti || confetti.create(name, { resize: true });
-
-        name.confetti({
-            spread: 90,
-            origin: { y: 0.5, x: dir },
-            particleCount: 500,
-            angle: angle,
-            ticks: 400,
-            startVelocity: 80
-        });
-    }
     // you should  only initialize a canvas once, so save this function
     // we'll save it to the canvas itself for the purpose of this demo
 
