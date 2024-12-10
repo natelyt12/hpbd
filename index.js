@@ -46,6 +46,22 @@ setTimeout(() => {
 // Background canvas
 
 var bgc = document.getElementById('background-canvas')
+var load_bar = document.querySelector('.progress')
+var load_text = document.querySelector('.loadingg')
+
+setTimeout(() => {
+    load_text.style.opacity = 1
+}, 2000);
+
+setTimeout(() => {
+    load_text.innerText = 'Load complete, enjoy your day!'
+}, 6000);
+
+setTimeout(() => {
+    bgc.style.backgroundColor = '#CAF4FF'
+    load_bar.style.opacity = 0
+    load_text.style.opacity = 0
+}, 7000);
 
 bgc.width = window.innerWidth
 bgc.height = window.innerHeight
