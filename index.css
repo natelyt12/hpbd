@@ -10,7 +10,6 @@
     /* easeInOutQuint */
 }
 
-
 body {
     user-select: none;
     margin: 0;
@@ -33,6 +32,7 @@ body {
     border-radius: 1000px;
     font-weight: 300;
     animation: zoom-out 1.5s 1s cubic-bezier(0.860, 0.000, 0.070, 1.000) forwards;
+    z-index: 3;
 }
 
 .age p {
@@ -118,14 +118,14 @@ body {
 }
 
 .cb {
-    background-color: #FFCCE1;
+    background-color: #A0DEFF;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%) rotate(45deg) scale(0);
     width: 100px;
     height: 100px;
-    z-index: -1;
+    z-index: 1;
     animation: zoom 2s 1.8s cubic-bezier(0.770, 0.000, 0.175, 1.000) forwards;
 }
 
@@ -137,8 +137,17 @@ body {
     transform: translate(-50%, -50%) rotate(45deg) scale(0);
     width: 100px;
     height: 100px;
-    z-index: -1;
+    z-index: 2;
     animation: zoom 2s 2s cubic-bezier(0.770, 0.000, 0.175, 1.000) forwards;
+}
+
+#background-canvas {
+    width: 100%;
+    height: 100vh;
+    background-color: #CAF4FF;
+    position: absolute;
+    top: 0;
+    z-index: -1;
 }
 
 /* Keyframes */

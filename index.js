@@ -42,3 +42,73 @@ setTimeout(() => {
 
 
 }, 1800);
+
+// Background canvas
+
+var bgc = document.getElementById('background-canvas')
+
+bgc.width = window.innerWidth
+bgc.height = window.innerHeight
+
+var c = bgc.getContext('2d')
+let y = window.innerHeight + 200
+
+let osuArr = []
+let osuArr2 = []
+let osuArr3 = []
+
+for (let i = 0; i < 100; i++) {
+    setTimeout(() => {
+        osuArr.push(new cir((Math.random() - 0.3) * window.innerWidth, y, 3, 300))
+    }, Math.random() * 500000);
+}
+
+for (let i = 0; i < 200; i++) {
+    setTimeout(() => {
+        osuArr2.push(new cir((Math.random() - 0.3) * window.innerWidth, y, 2, 200))
+    }, Math.random() * 500000);
+}
+
+for (let i = 0; i < 300; i++) {
+    setTimeout(() => {
+        osuArr3.push(new cir((Math.random() - 0.3) * window.innerWidth, y, 1, 100))
+    }, Math.random() * 500000);
+}
+
+
+
+function animate() {
+    requestAnimationFrame(animate)
+    c.clearRect(0, 0, innerWidth, innerHeight)
+
+    for (let i = 0; i < osuArr.length; i++) {
+        osuArr[i].update()
+    }
+    for (let i = 0; i < osuArr2.length; i++) {
+        osuArr2[i].update()
+    }
+    for (let i = 0; i < osuArr3.length; i++) {
+        osuArr3[i].update()
+    }
+}
+animate()
+
+function cir(x, y, ysp, r) {
+    this.x = x;
+    this.y = y;
+    this.ysp = ysp
+    this.r = r;
+    this.draw = function () {
+        c.beginPath();
+        c.arc(this.x, this.y, this.r, 0, Math.PI * 2, false);
+        c.fillStyle = "rgba(255, 255, 255, 0.3)";
+        c.fill();
+    }
+    this.update = function () {
+        this.x += 0.5
+        this.y -= this.ysp
+        this.draw();
+    }
+}
+
+// generate(300, y)
