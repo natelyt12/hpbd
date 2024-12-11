@@ -53,15 +53,21 @@ setTimeout(() => {
     load_text.style.opacity = 1
 }, 2000);
 
-setTimeout(() => {
-    load_text.innerText = 'Load complete, enjoy your day!'
-}, 6000);
+
+document.addEventListener('click', () => {
+    load_text.innerText = 'Enjoy your day!'
+})
 
 setTimeout(() => {
     bgc.style.backgroundColor = '#CAF4FF'
     load_bar.style.opacity = 0
     load_text.style.opacity = 0
 }, 7000);
+
+setTimeout(() => {
+    bgc.style.backgroundColor = 'rgb(255, 211, 219)'
+    bgc.style.transition = '15s'
+}, 19000);
 
 bgc.width = window.innerWidth
 bgc.height = window.innerHeight
@@ -75,28 +81,25 @@ let osuArr3 = []
 
 for (let i = 0; i < 100; i++) {
     setTimeout(() => {
-        osuArr.push(new cir((Math.random() - 0.3) * window.innerWidth, y, 3, 300))
+        osuArr.push(new cir((Math.random() - 0.2) * window.innerWidth, y, 3, 300))
     }, Math.random() * 500000);
 }
 
 for (let i = 0; i < 200; i++) {
     setTimeout(() => {
-        osuArr2.push(new cir((Math.random() - 0.3) * window.innerWidth, y, 2, 200))
+        osuArr2.push(new cir((Math.random() - 0.2) * window.innerWidth, y, 2, 200))
     }, Math.random() * 500000);
 }
 
 for (let i = 0; i < 300; i++) {
     setTimeout(() => {
-        osuArr3.push(new cir((Math.random() - 0.3) * window.innerWidth, y, 1, 100))
+        osuArr3.push(new cir((Math.random() - 0.2) * window.innerWidth, y, 1, 100))
     }, Math.random() * 500000);
 }
-
-
 
 function animate() {
     requestAnimationFrame(animate)
     c.clearRect(0, 0, innerWidth, innerHeight)
-
     for (let i = 0; i < osuArr.length; i++) {
         osuArr[i].update()
     }
@@ -112,7 +115,7 @@ animate()
 function cir(x, y, ysp, r) {
     this.x = x;
     this.y = y;
-    this.ysp = ysp
+    this.ysp = ysp;
     this.r = r;
     this.draw = function () {
         c.beginPath();
@@ -126,5 +129,10 @@ function cir(x, y, ysp, r) {
         this.draw();
     }
 }
+// Line?
 
-// generate(300, y)
+sb = document.getElementById('skyblu')
+
+setTimeout(() => {
+    sb.play()
+}, 7000);

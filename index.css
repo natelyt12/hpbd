@@ -152,7 +152,7 @@ body {
 }
 
 .progress {
-    background-color: rgb(0, 0, 0);
+    background-color: pink;
     position: absolute;
     width: 0;
     height: 3px;
@@ -217,7 +217,7 @@ body {
 
 @keyframes downname {
     to {
-        top: 18%;
+        top: 17%;
     }
 }
 
