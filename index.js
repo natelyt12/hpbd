@@ -135,4 +135,5 @@ sb = document.getElementById('skyblu')
 
 setTimeout(() => {
     sb.play()
+    sb.volume = 0.4
 }, 7000);
