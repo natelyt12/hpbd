@@ -19,6 +19,10 @@ body {
     overflow: hidden;
 }
 
+#lmao{
+    width: 100%;
+    height: 100vh;
+}
 
 .age {
     position: absolute;
@@ -64,6 +68,7 @@ body {
     text-align: center;
     transform: translateX(-50%);
     animation: down 2s 2s forwards cubic-bezier(0.230, 1.000, 0.320, 1.000);
+    z-index: 3;
 }
 
 .hpbdsub {
@@ -74,6 +79,7 @@ body {
     text-align: center;
     transform: translateX(-50%);
     animation: up 2s 2s forwards cubic-bezier(0.230, 1.000, 0.320, 1.000);
+    z-index: 3;
 }
 
 .nametext {
@@ -88,12 +94,13 @@ body {
     text-align: center;
     color: transparent;
     animation: downname 2s 2s forwards cubic-bezier(0.230, 1.000, 0.320, 1.000), hue 5s 1s linear infinite;
+    z-index: 3;
 }
 
 
 #changename {
     margin: 0;
-    animation: changename 7s 5s infinite cubic-bezier(0.230, 1.000, 0.320, 1.000);
+    animation: changename 10s 5s infinite cubic-bezier(0.230, 1.000, 0.320, 1.000);
     background-image: linear-gradient(to left, #ff7fb4, #967eff);
     background-clip: text;
     -webkit-background-clip: text;
@@ -152,10 +159,10 @@ body {
 }
 
 .progress {
-    background-color: pink;
+    background-color: rgb(153, 153, 153);
     position: absolute;
     width: 0;
-    height: 3px;
+    height: 2px;
     bottom: 0;
     animation: progressrun 4s 2s linear forwards;
     transition: 2s;
@@ -169,7 +176,24 @@ body {
     transition: 1s;
 }
 
+#note {
+    -webkit-user-drag: none;
+    animation: rotate 10s linear infinite;
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    bottom: -100px;
+    z-index: 0;
+}
+
 /* Keyframes */
+
+@keyframes rotate {
+    to {
+        transform: translate(500px, -800px) rotate(0deg);
+        opacity: 0.2;
+    }
+}
 
 @keyframes progressrun {
     to {

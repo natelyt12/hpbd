@@ -137,3 +137,26 @@ setTimeout(() => {
     sb.play()
     sb.volume = 0.4
 }, 7000);
+
+let body = document.getElementById('lmao')
+
+
+for (let i = 0; i < 100; i++) {
+    setTimeout(() => {
+        createNote(Math.random() * window.innerWidth)
+    }, Math.round(Math.random() * 500000));
+}
+
+function createNote(x, r) {
+    let image = document.createElement('img')
+    image.src = './assets/note.png'
+    image.style.left = `${x}px`
+    image.style.transform = `rotate(${Math.floor(Math.random() * 359)}deg)`
+    image.id = 'note'
+
+    body.appendChild(image)
+
+    setTimeout(() => {
+        body.removeChild(image)
+    }, 10000);
+}
